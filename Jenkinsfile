@@ -14,7 +14,7 @@ node {
        sh 'mvn test'
      }
    }
-   stage('SonarQube Analysis') {
+/*   stage('SonarQube Analysis') {
       //def job = build job: 'SonarJob'
       //withSonarQubeEnv("SonarQube") {
       //}
@@ -24,7 +24,7 @@ node {
              ' -Dsonar.organization=pattabhi '+ 
              ' -Dsonar.login=df5bb81bae9ba310d6a38135b957227ba6ecd32c '
           }
-      }
+      } */
    
     //stage("Quality Gate"){
           //timeout(time: 1, unit: 'HOURS') {
