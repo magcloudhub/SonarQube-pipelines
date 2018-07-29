@@ -2,7 +2,7 @@ node {
    
    stage('Code Checkout') { // for display purposes
       // Get some code from a GitHub repository
-    git credentialsId: 'Github-ID', url: 'https://github.com/InfinityVegas/wannacry.git'
+    git credentialsId: 'Github-ID', url: 'https://github.com/pavants52/SonarQube-pipelines.git'
    }
    stage('Build') {
      withMaven(jdk: 'JDK-1.8.0_171', maven: 'Maven-3.5.3') {
