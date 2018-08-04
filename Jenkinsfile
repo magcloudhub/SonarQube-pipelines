@@ -2,15 +2,15 @@ node {
    
    stage('Code Checkout') { // for display purposes
       // Get some code from a GitHub repository
-    git credentialsId: 'Github-ID', url: 'https://github.com/pavants52/SonarQube-pipelines.git'
+    git credentialsId: 'Github-ID', url: 'https://github.com/magcloudhub/SonarQube-pipelines.git'
    }
    stage('Build') {
-     withMaven(jdk: 'JDK-1.8.0_171', maven: 'Maven-3.5.3') {
+     withMaven(jdk: 'Java', maven: 'Maven') {
        sh 'mvn clean compile'
      }
    }
    stage('Unit Test') {
-     withMaven(jdk: 'JDK-1.8.0_171', maven: 'Maven-3.5.3') {
+     withMaven(jdk: 'Java', maven: 'Maven') {
        sh 'mvn test'
      }
    }
@@ -18,7 +18,7 @@ node {
       //def job = build job: 'SonarJob'
       //withSonarQubeEnv("SonarQube") {
       //}
-      withMaven(jdk: 'JDK-1.8.151', maven: 'Maven-3.5.3') {
+      withMaven(jdk: 'Java', maven: 'Maven') {
           sh ' mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar ' +
              ' -Dsonar.host.url=https://sonarcloud.io ' +
              ' -Dsonar.organization=pattabhi '+ 
@@ -36,7 +36,7 @@ node {
      // }
    
     stage('Archival') {
-      withMaven(jdk: 'JDK-1.8.0_171', maven: 'Maven-3.5.3') {
+      withMaven(jdk: 'Java', maven: 'Maven') {
        //sh 'mvn package'
      }
    }
