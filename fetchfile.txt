@@ -8,3 +8,4 @@ magcloudhub
 cloud integration with deovsecops
 Artificial intelligence
 Machine learning language
+R and Matlab and Python language
